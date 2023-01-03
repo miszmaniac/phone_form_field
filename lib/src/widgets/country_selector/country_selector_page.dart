@@ -27,6 +27,10 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
   /// The [ScrollPhysics] of the Country List
   final ScrollPhysics? scrollPhysics;
 
+  final Widget? clearIcon;
+
+  final Widget? backButton;
+
   /// Determine the countries to be displayed on top of the list
   /// Check [addFavoritesSeparator] property to enable/disable adding a
   /// list divider between favorites and others defaults countries
@@ -53,6 +57,8 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
     required this.onCountrySelected,
     this.scrollController,
     this.scrollPhysics,
+    this.clearIcon,
+    this.backButton,
     this.addFavoritesSeparator = true,
     this.showCountryCode = false,
     this.noResultMessage,
@@ -67,7 +73,7 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
     return [
       IconButton(
         onPressed: () => query = '',
-        icon: const Icon(Icons.clear),
+        icon: clearIcon ?? const Icon(Icons.clear),
       ),
     ];
   }
@@ -93,7 +99,7 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
 
   @override
   Widget? buildLeading(BuildContext context) {
-    return BackButton(
+    return backButton ?? BackButton(
       onPressed: () => Navigator.of(context).pop(),
     );
   }

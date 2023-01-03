@@ -17,6 +17,8 @@ abstract class CountrySelectorNavigator {
   final TextStyle? searchBoxTextStyle;
   final Color? searchBoxIconColor;
   final ScrollPhysics? scrollPhysics;
+  final Widget? clearIcon;
+  final Widget? backButton;
 
   const CountrySelectorNavigator({
     this.countries,
@@ -32,6 +34,8 @@ abstract class CountrySelectorNavigator {
     this.searchBoxTextStyle,
     this.searchBoxIconColor,
     this.scrollPhysics,
+    this.clearIcon,
+    this.backButton,
   });
 
   Future<Country?> navigate(BuildContext context);
@@ -90,6 +94,8 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) = SearchDelegateNavigator._;
 
   const factory CountrySelectorNavigator.bottomSheet({
@@ -166,6 +172,8 @@ class DialogNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -180,6 +188,8 @@ class DialogNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
         );
 
   @override
@@ -214,6 +224,8 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -228,6 +240,8 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
         );
 
   @override
@@ -244,6 +258,8 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
       noResultMessage: noResultMessage,
       searchAutofocus: searchAutofocus,
       showCountryCode: showCountryCode,
+      clearIcon: clearIcon,
+      backButton: backButton,
     );
   }
 
@@ -273,6 +289,8 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -287,6 +305,8 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
         );
 
   @override
@@ -323,6 +343,8 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -337,6 +359,8 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
         );
 
   @override
@@ -378,6 +402,8 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -392,6 +418,8 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
         );
 
   @override

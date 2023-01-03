@@ -91,12 +91,12 @@ class PhoneFormFieldState extends FormFieldState<PhoneNumber> {
       // to figure out the country code
       final international = childNsn;
       try {
-        phoneNumber = PhoneNumber.parse(international);
+        phoneNumber = PhoneParserHelper.parse(international);
       } on PhoneNumberException {
         return;
       }
     } else {
-      phoneNumber = PhoneNumber.parse(
+      phoneNumber = PhoneParserHelper.parse(
         childNsn ?? '',
         destinationCountry: _childController.isoCode,
       );

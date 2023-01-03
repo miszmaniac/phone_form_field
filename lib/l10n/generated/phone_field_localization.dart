@@ -1,3 +1,4 @@
+
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -14,6 +15,7 @@ import 'phone_field_localization_fr.dart';
 import 'phone_field_localization_hi.dart';
 import 'phone_field_localization_it.dart';
 import 'phone_field_localization_nl.dart';
+import 'phone_field_localization_pl.dart';
 import 'phone_field_localization_pt.dart';
 import 'phone_field_localization_ru.dart';
 import 'phone_field_localization_sv.dart';
@@ -21,14 +23,14 @@ import 'phone_field_localization_tr.dart';
 import 'phone_field_localization_uk.dart';
 import 'phone_field_localization_zh.dart';
 
-/// Callers can lookup localized strings with an instance of PhoneFieldLocalization
-/// returned by `PhoneFieldLocalization.of(context)`.
+/// Callers can lookup localized strings with an instance of PhoneFieldLocalization returned
+/// by `PhoneFieldLocalization.of(context)`.
 ///
 /// Applications need to include `PhoneFieldLocalization.delegate()` in their app's
-/// `localizationDelegates` list, and the locales they support in the app's
-/// `supportedLocales` list. For example:
+/// localizationDelegates list, and the locales they support in the app's
+/// supportedLocales list. For example:
 ///
-/// ```dart
+/// ```
 /// import 'generated/phone_field_localization.dart';
 ///
 /// return MaterialApp(
@@ -43,14 +45,14 @@ import 'phone_field_localization_zh.dart';
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```yaml
+/// ```
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
 ///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # Rest of dependencies
+///   # rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -111,6 +113,7 @@ abstract class PhoneFieldLocalization {
     Locale('hi'),
     Locale('it'),
     Locale('nl'),
+    Locale('pl'),
     Locale('pt'),
     Locale('ru'),
     Locale('sv'),
@@ -1623,7 +1626,7 @@ class _PhoneFieldLocalizationDelegate extends LocalizationsDelegate<PhoneFieldLo
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ar', 'de', 'el', 'en', 'es', 'fr', 'hi', 'it', 'nl', 'pt', 'ru', 'sv', 'tr', 'uk', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['ar', 'de', 'el', 'en', 'es', 'fr', 'hi', 'it', 'nl', 'pl', 'pt', 'ru', 'sv', 'tr', 'uk', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_PhoneFieldLocalizationDelegate old) => false;
@@ -1643,6 +1646,7 @@ PhoneFieldLocalization lookupPhoneFieldLocalization(Locale locale) {
     case 'hi': return PhoneFieldLocalizationHi();
     case 'it': return PhoneFieldLocalizationIt();
     case 'nl': return PhoneFieldLocalizationNl();
+    case 'pl': return PhoneFieldLocalizationPl();
     case 'pt': return PhoneFieldLocalizationPt();
     case 'ru': return PhoneFieldLocalizationRu();
     case 'sv': return PhoneFieldLocalizationSv();
