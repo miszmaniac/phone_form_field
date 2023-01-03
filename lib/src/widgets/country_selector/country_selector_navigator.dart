@@ -78,6 +78,8 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) = DialogNavigator._;
 
   const factory CountrySelectorNavigator.searchDelegate({
@@ -112,6 +114,8 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) = BottomSheetNavigator._;
 
   const factory CountrySelectorNavigator.modalBottomSheet({
@@ -129,6 +133,8 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) = ModalBottomSheetNavigator._;
 
   const factory CountrySelectorNavigator.draggableBottomSheet({
@@ -149,6 +155,8 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
   }) = DraggableModalBottomSheetNavigator._;
 }
 
