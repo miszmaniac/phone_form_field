@@ -62,11 +62,13 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
     this.addFavoritesSeparator = true,
     this.showCountryCode = false,
     this.noResultMessage,
+    String? searchFieldLabel,
     List<IsoCode> favoriteCountries = const [],
     List<IsoCode>? countries,
     this.searchAutofocus = kIsWeb,
   })  : countriesIso = countries ?? IsoCode.values,
-        favoriteCountriesIso = favoriteCountries;
+        favoriteCountriesIso = favoriteCountries,
+        super(searchFieldLabel: searchFieldLabel);
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -99,9 +101,10 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
 
   @override
   Widget? buildLeading(BuildContext context) {
-    return backButton ?? BackButton(
-      onPressed: () => Navigator.of(context).pop(),
-    );
+    return backButton ??
+        BackButton(
+          onPressed: () => Navigator.of(context).pop(),
+        );
   }
 
   @override
