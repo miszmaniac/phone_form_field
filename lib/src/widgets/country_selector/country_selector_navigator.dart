@@ -19,6 +19,7 @@ abstract class CountrySelectorNavigator {
   final ScrollPhysics? scrollPhysics;
   final Widget? clearIcon;
   final Widget? backButton;
+  final String? searchFieldLabel;
 
   const CountrySelectorNavigator({
     this.countries,
@@ -36,6 +37,7 @@ abstract class CountrySelectorNavigator {
     this.scrollPhysics,
     this.clearIcon,
     this.backButton,
+    this.searchFieldLabel,
   });
 
   Future<Country?> navigate(BuildContext context);
@@ -80,6 +82,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) = DialogNavigator._;
 
   const factory CountrySelectorNavigator.searchDelegate({
@@ -98,6 +101,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) = SearchDelegateNavigator._;
 
   const factory CountrySelectorNavigator.bottomSheet({
@@ -116,6 +120,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) = BottomSheetNavigator._;
 
   const factory CountrySelectorNavigator.modalBottomSheet({
@@ -135,6 +140,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) = ModalBottomSheetNavigator._;
 
   const factory CountrySelectorNavigator.draggableBottomSheet({
@@ -157,6 +163,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) = DraggableModalBottomSheetNavigator._;
 }
 
@@ -182,6 +189,7 @@ class DialogNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -198,6 +206,7 @@ class DialogNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -234,6 +243,7 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -250,6 +260,7 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -268,6 +279,7 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
       showCountryCode: showCountryCode,
       clearIcon: clearIcon,
       backButton: backButton,
+      searchFieldLabel: searchFieldLabel,
     );
   }
 
@@ -299,6 +311,7 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -315,6 +328,7 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -353,6 +367,7 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -369,6 +384,7 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -412,6 +428,7 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -428,6 +445,7 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
