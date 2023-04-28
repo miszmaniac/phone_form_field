@@ -19,6 +19,7 @@ abstract class CountrySelectorNavigator {
   final ScrollPhysics? scrollPhysics;
   final Widget? clearIcon;
   final Widget? backButton;
+  final Widget? searchIcon;
   final String? searchFieldLabel;
 
   const CountrySelectorNavigator({
@@ -37,6 +38,7 @@ abstract class CountrySelectorNavigator {
     this.scrollPhysics,
     this.clearIcon,
     this.backButton,
+    this.searchIcon,
     this.searchFieldLabel,
   });
 
@@ -61,6 +63,7 @@ abstract class CountrySelectorNavigator {
       searchBoxTextStyle: searchBoxTextStyle,
       searchBoxIconColor: searchBoxIconColor,
       scrollPhysics: scrollPhysics,
+      searchIcon: searchIcon,
     );
   }
 
@@ -82,6 +85,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) = DialogNavigator._;
 
@@ -101,6 +105,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) = SearchDelegateNavigator._;
 
@@ -120,6 +125,7 @@ abstract class CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) = BottomSheetNavigator._;
 
@@ -189,6 +195,7 @@ class DialogNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) : super(
           countries: countries,
@@ -206,6 +213,7 @@ class DialogNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchIcon: searchIcon,
           searchFieldLabel: searchFieldLabel,
         );
 
@@ -243,6 +251,7 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) : super(
           countries: countries,
@@ -260,6 +269,7 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchIcon: searchIcon,
           searchFieldLabel: searchFieldLabel,
         );
 
@@ -311,6 +321,7 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) : super(
           countries: countries,
@@ -328,6 +339,7 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchIcon: searchIcon,
           searchFieldLabel: searchFieldLabel,
         );
 
@@ -367,6 +379,7 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) : super(
           countries: countries,
@@ -384,6 +397,7 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchIcon: searchIcon,
           searchFieldLabel: searchFieldLabel,
         );
 
@@ -428,6 +442,7 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
     ScrollPhysics? scrollPhysics,
     Widget? clearIcon,
     Widget? backButton,
+    Widget? searchIcon,
     String? searchFieldLabel,
   }) : super(
           countries: countries,
@@ -445,6 +460,7 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
           scrollPhysics: scrollPhysics,
           clearIcon: clearIcon,
           backButton: backButton,
+          searchIcon: searchIcon,
           searchFieldLabel: searchFieldLabel,
         );
 

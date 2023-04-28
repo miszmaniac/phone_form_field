@@ -5,6 +5,7 @@ class SearchBox extends StatelessWidget {
   final bool autofocus;
   final InputDecoration? decoration;
   final TextStyle? style;
+  final Widget? searchIcon;
   final Color? searchIconColor;
 
   const SearchBox({
@@ -13,6 +14,7 @@ class SearchBox extends StatelessWidget {
     required this.autofocus,
     this.decoration,
     this.style,
+    this.searchIcon,
     this.searchIconColor,
   }) : super(key: key);
 
@@ -26,7 +28,7 @@ class SearchBox extends StatelessWidget {
         style: style,
         decoration: decoration ??
             InputDecoration(
-              prefixIcon: Icon(
+              prefixIcon: searchIcon ?? Icon(
                 Icons.search,
                 color:
                     searchIconColor ?? (Theme.of(context).brightness == Brightness.dark ? Colors.white54 : Colors.black38),
