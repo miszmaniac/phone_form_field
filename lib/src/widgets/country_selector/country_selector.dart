@@ -58,7 +58,11 @@ class CountrySelector extends StatefulWidget {
 
   /// The [Color] of the Search Icon in the Search Box
   final Color? searchBoxIconColor;
+
   final double flagSize;
+
+  /// Search icon instead of default one
+  final Widget? searchIcon;
 
   const CountrySelector({
     Key? key,
@@ -77,6 +81,7 @@ class CountrySelector extends StatefulWidget {
     this.searchBoxTextStyle,
     this.searchBoxIconColor,
     this.flagSize = 40,
+    this.searchIcon,
   }) : super(key: key);
 
   @override
@@ -139,6 +144,7 @@ class CountrySelectorState extends State<CountrySelector> {
             decoration: widget.searchBoxDecoration,
             style: widget.searchBoxTextStyle,
             searchIconColor: widget.searchBoxIconColor,
+            searchIcon: widget.searchIcon,
           ),
         ),
         const SizedBox(height: 16),

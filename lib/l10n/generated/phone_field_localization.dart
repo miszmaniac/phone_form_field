@@ -14,6 +14,7 @@ import 'phone_field_localization_fr.dart';
 import 'phone_field_localization_hi.dart';
 import 'phone_field_localization_it.dart';
 import 'phone_field_localization_nl.dart';
+import 'phone_field_localization_pl.dart';
 import 'phone_field_localization_pt.dart';
 import 'phone_field_localization_ru.dart';
 import 'phone_field_localization_sv.dart';
@@ -115,6 +116,7 @@ abstract class PhoneFieldLocalization {
     Locale('hi'),
     Locale('it'),
     Locale('nl'),
+    Locale('pl'),
     Locale('pt'),
     Locale('ru'),
     Locale('sv'),
@@ -1640,6 +1642,7 @@ class _PhoneFieldLocalizationDelegate
         'it',
         'nl',
         'pt',
+        'pl',
         'ru',
         'sv',
         'tr',
@@ -1674,6 +1677,8 @@ PhoneFieldLocalization lookupPhoneFieldLocalization(Locale locale) {
       return PhoneFieldLocalizationNl();
     case 'pt':
       return PhoneFieldLocalizationPt();
+    case 'pl':
+      return PhoneFieldLocalizationPl();
     case 'ru':
       return PhoneFieldLocalizationRu();
     case 'sv':

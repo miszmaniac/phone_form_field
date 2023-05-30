@@ -19,6 +19,10 @@ abstract class CountrySelectorNavigator {
   final ScrollPhysics? scrollPhysics;
   final double flagSize;
   final bool useRootNavigator;
+  final Widget? clearIcon;
+  final Widget? backButton;
+  final Widget? searchIcon;
+  final String? searchFieldLabel;
 
   const CountrySelectorNavigator({
     this.countries,
@@ -36,6 +40,10 @@ abstract class CountrySelectorNavigator {
     this.scrollPhysics,
     this.flagSize = 40,
     this.useRootNavigator = true,
+    this.clearIcon,
+    this.backButton,
+    this.searchIcon,
+    this.searchFieldLabel,
   });
 
   Future<Country?> navigate(BuildContext context);
@@ -60,6 +68,7 @@ abstract class CountrySelectorNavigator {
       searchBoxIconColor: searchBoxIconColor,
       scrollPhysics: scrollPhysics,
       flagSize: flagSize,
+      searchIcon: searchIcon,
     );
   }
 
@@ -79,6 +88,10 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) = DialogNavigator._;
 
   const factory CountrySelectorNavigator.searchDelegate({
@@ -95,6 +108,10 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) = SearchDelegateNavigator._;
 
   const factory CountrySelectorNavigator.bottomSheet({
@@ -111,6 +128,10 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) = BottomSheetNavigator._;
 
   const factory CountrySelectorNavigator.modalBottomSheet({
@@ -128,6 +149,9 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    String? searchFieldLabel,
   }) = ModalBottomSheetNavigator._;
 
   const factory CountrySelectorNavigator.draggableBottomSheet({
@@ -149,6 +173,9 @@ abstract class CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    String? searchFieldLabel,
   }) = DraggableModalBottomSheetNavigator._;
 }
 
@@ -172,6 +199,10 @@ class DialogNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -186,6 +217,10 @@ class DialogNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
+          searchIcon: searchIcon,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -221,6 +256,10 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -235,6 +274,10 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
+          searchIcon: searchIcon,
+          searchFieldLabel: searchFieldLabel,
         );
 
   CountrySelectorSearchDelegate _getCountrySelectorSearchDelegate({
@@ -252,6 +295,9 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
       showCountryCode: showCountryCode,
       titleStyle: titleStyle,
       subtitleStyle: subtitleStyle,
+      clearIcon: clearIcon,
+      backButton: backButton,
+      searchFieldLabel: searchFieldLabel,
     );
   }
 
@@ -281,6 +327,10 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -295,6 +345,10 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
+          searchIcon: searchIcon,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -303,7 +357,7 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
     final ctrl = showBottomSheet(
       context: context,
       builder: (_) => MediaQuery(
-        data: MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+        data: MediaQueryData.fromView(View.of(context)),
         child: SafeArea(
           child: _getCountrySelector(
             onCountrySelected: (country) {
@@ -336,6 +390,10 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
   }) : super(
           countries: countries,
           favorites: favorites,
@@ -350,6 +408,10 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
+          searchIcon: searchIcon,
+          searchFieldLabel: searchFieldLabel,
         );
 
   @override
@@ -392,6 +454,10 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
     TextStyle? searchBoxTextStyle,
     Color? searchBoxIconColor,
     ScrollPhysics? scrollPhysics,
+    Widget? clearIcon,
+    Widget? backButton,
+    Widget? searchIcon,
+    String? searchFieldLabel,
     bool useRootNavigator = true,
   }) : super(
           countries: countries,
@@ -407,6 +473,10 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
+          clearIcon: clearIcon,
+          backButton: backButton,
+          searchIcon: searchIcon,
+          searchFieldLabel: searchFieldLabel,
           flagSize: flagSize,
         );
 

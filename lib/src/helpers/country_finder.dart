@@ -17,7 +17,7 @@ class CountryFinder {
   CountryFinder(List<Country> allCountries, {bool sort = true}) {
     _allCountries = [...allCountries];
     if (sort) {
-      _allCountries.sort((a, b) => a.name.compareTo(b.name));
+      _allCountries.sort((a, b) => removeDiacritics(a.name).compareTo(removeDiacritics(b.name)));
     }
     _filteredCountries = [..._allCountries];
   }
